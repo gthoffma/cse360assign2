@@ -17,73 +17,79 @@ package cse360assign2;
 public class AddingMachine {
 
 	/**
-	 * member integer that hold the result of the operations
-	 *  performed
+	 * total is a member integer that hold the result of the operations
+	 *  performed.
 	 */
 	private int total;
-	
+	/**
+	 * operationsString is a string that holds the operations
+	 *  done on total.
+	 */
+	private String operationsString;
 	/**
 	 * public constructor that assigns the "total" member variable
-	 *  to 0.
-	 * @param N/A
+	 *  to 0. Also sets the string operationsString to "0"
+	 * @param none
 	 */
 	public AddingMachine () {
 		total = 0;  // not needed - included for clarity
+		operationsString = "0";
 	}
 	
 	/**
-	 * getTotal returns the total of the number of operations
-	 *  performed on the "total" member variable.
-	 * (NOTE: this function has not been implemented yet)
+	 * getTotal returns the private member total, which holds the
+	 *  result of all operations performed
 	 * @param none
-	 * @return total, which is the total value of all operations
+	 * @return an integer that is the total value of all operations
 	 *  performed
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
-	 * add allows the "total" value to be changed by adding
-	 *  the parameter to the member "total"
-	 * (NOTE: this function has not been implemented yet)
+	 * changes the value of "total" by adding
+	 *  the parameter to the member "total." Also updates the member
+	 *  string operationsString accordingly
 	 * @param value is the value to be added to "total"
 	 * @return none
 	 */
 	public void add (int value) {
-		
+		total = total + value;
+		operationsString = operationsString + " + " + value;
 	}
 	
 	/**
-	 * subtract allows the "total" to be changed by subtracting
-	 *  the parameter from "total."
-	 * (NOTE: this function has not been implemented yet)
+	 * changes the value of "total" by subtracting
+	 *  the parameter from the member "total." Also updates the member
+	 *  string operationsString accordingly
 	 * @param value is the value to be subtracted from "total"
 	 * @return none
 	 */
 	public void subtract (int value) {
-		
+		total = total - value;
+		operationsString = operationsString + " - " + value;
 	}
 		
 	/**
 	 * returns a string that represents the operations performed on
-	 *  "total" in order
-	 * (NOTE: this function has not been implemented yet)
+	 *  "total" in order, which is held in operationsString
 	 * @param none
 	 * @return a string that represents the operations
 	 *  performed on "total"
 	 */
 	public String toString () {
-		return "";
+		return operationsString;
 	}
 
 	/**
-	 * sets the value of "total" to 0 and removes the history
-	 *  of operations
+	 * sets the value of "total" to 0 and sets the
+	 *  value of operationsString to "0" as well.
 	 *  @param none
 	 *  @return none
 	 */
 	public void clear() {
-	
+		total = 0;
+		operationsString = "0";
 	}
 }
